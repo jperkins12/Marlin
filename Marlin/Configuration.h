@@ -127,6 +127,8 @@
   #define MOTHERBOARD BOARD_MELZI_CREALITY
 #endif
 
+#define SERVO0_PIN 5
+
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
 #define CUSTOM_MACHINE_NAME "Ender-3"
@@ -671,7 +673,7 @@
  *
  * Enable this option for a probe connected to the Z Min endstop pin.
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 /**
  * Z_MIN_PROBE_ENDSTOP
@@ -692,7 +694,8 @@
  * disastrous consequences. Use with caution and do your homework.
  *
  */
-//#define Z_MIN_PROBE_ENDSTOP
+#define Z_MIN_PROBE_ENDSTOP
+#define Z_MIN_PROBE_PIN 7
 
 /**
  * Probe Type
@@ -724,7 +727,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH
+#define BLTOUCH
 
 
 /**
@@ -771,8 +774,8 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER 10  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER 10  // Y offset: -front +behind [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -44  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -9  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
@@ -970,7 +973,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1137,7 +1140,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing when homing all axes (G28).
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE) / 2)    // X point for Z homing when homing all axes (G28).
@@ -1422,7 +1425,7 @@
  * you must uncomment the following option or it won't work.
  *
  */
-#define SDSUPPORT
+// #define SDSUPPORT
 
 /**
  * SD CARD: SPI SPEED
@@ -1448,7 +1451,7 @@
  * just remove some extraneous menu items to recover space.
  */
 //#define NO_LCD_MENUS
-//#define SLIM_LCD_MENUS
+#define SLIM_LCD_MENUS
 
 //
 // ENCODER SETTINGS
